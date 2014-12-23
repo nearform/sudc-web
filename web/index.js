@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 'use strict';
 
 var beanstalk_host = process.env.BEANSTALK_HOST||'127.0.0.1'
@@ -53,6 +55,5 @@ if (require.main === module) {
         }
     });
 }
-
 
 module.exports = app;
