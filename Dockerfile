@@ -1,5 +1,5 @@
 # DOCKER-VERSION 0.3.4
-FROM node
+FROM node:0.10
 
 
 ADD . /
