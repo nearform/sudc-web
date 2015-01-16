@@ -1,15 +1,12 @@
 # DOCKER-VERSION 0.3.4
-FROM ubuntu
+FROM node
 
-RUN echo "deb http://archive.ubuntu.com/ubuntu precise universe" >> /etc/apt/sources.list
-RUN apt-get update
-RUN apt-get install -y software-properties-common
-RUN apt-get install -y python-software-properties python g++ make
-RUN add-apt-repository -y ppa:chris-lea/node.js
-RUN apt-get update
-RUN apt-get install -y nodejs
 
 ADD . /
+RUN npm install
+WORKDIR web
+RUN npm install
+WORKDIR ../
 EXPOSE 9002
-CMD /usr/bin/node /srv/doc-srv
+CMD node /web/index.js
 
