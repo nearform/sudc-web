@@ -7,7 +7,6 @@ RUN npm install
 WORKDIR web
 RUN npm install
 RUN npm install -g bower
-WORKDIR ../
 EXPOSE 9002
-CMD node /web/index.js
+CMD node index.js
 
